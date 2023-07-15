@@ -1,0 +1,12 @@
+.main-panel {
+  display: grid;
+  grid-template-areas: 
+    "controls-container controls-container"
+    "guitar-frame history-blurb";
+  grid-template-columns: 489px 1fr;
+  grid-template-rows: 55px 595px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 650px;
+  width: 90vw;
+}

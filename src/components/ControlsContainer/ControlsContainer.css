@@ -1,0 +1,4 @@
+.controls-container {
+  background-color: green;
+  grid-area: controls-container;
+}

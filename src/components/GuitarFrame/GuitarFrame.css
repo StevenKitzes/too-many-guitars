@@ -1,8 +1,10 @@
 .guitar-frame-container {
-  height: 600px;
-  margin: inherit auto;
+  grid-area: guitar-frame;
+  height: 595px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-  width: 500px;
+  width: 489px;
 }
 
 .guitar-frame {
