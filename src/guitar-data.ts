@@ -2,10 +2,108 @@ import { GuitarData } from "./types/types";
 
 export const data: GuitarData[] = [
   {
-    "model": "Squier",
-    "brand": "Fender",
-    "year": null,
-    "imageName": "squier",
-    "history": "Of all the guitars I have ever seen, this is definitely one of them."
-  }
+    model: "Strat (modified)",
+    brand: "Fender Squier",
+    year: null,
+    imageName: "punk-squier",
+    history: "My first guitar, with some upgrades, lucky flame maple neck, and heavy styling."
+  },
+  {
+    model: "RG450",
+    brand: "Ibanez",
+    year: 1994,
+    imageName: "rg450",
+    history: "My first fancy guitar."
+  },
+  {
+    model: "Handmade",
+    brand: "Durazo",
+    year: 2021,
+    imageName: "durazo",
+    history: "My friend and I sourced parts and built this guitar up from raw wood."
+  },
+  {
+    model: "Strat",
+    brand: "Fender Squier",
+    year: null,
+    imageName: "squier",
+    history: "A gift I received."
+  },
+  {
+    model: "Slammer",
+    brand: "Hamer",
+    year: null,
+    imageName: "slammer",
+    history: "A guitar I bought as a souvenier in a Santa Barbara antique consignment shop."
+  },
+  {
+    model: "CR-6",
+    brand: "Schecter",
+    year: null,
+    imageName: "cr-6",
+    history: "My first serious player's guitar."
+  },
+  {
+    model: "SE Custom 22 Semi-hollow",
+    brand: "PRS",
+    year: null,
+    imageName: "se-custom-22",
+    history: "My fanciest and best guitar from the maker I've been into for years."
+  },
+  {
+    model: "S561",
+    brand: "Ibanez",
+    year: null,
+    imageName: "s561",
+    history: "Bought this to have it signed by Nita Strauss at an event at Guitar Center in Hollywood."
+  },
+  {
+    model: "Handmade",
+    brand: "StewMac",
+    year: 2021,
+    imageName: "lp-clone",
+    history: "I built this from a kit during COVID times."
+  },
+  {
+    model: "Tiny Boy",
+    brand: null,
+    year: null,
+    imageName: "tiny-boy",
+    history: "A gift I got in Japan that I brought home to Los Angeles with me."
+  },
+  {
+    model: "Handmade",
+    brand: null,
+    year: null,
+    imageName: "carbon",
+    history: "A hand made partscaster with a carbon fiber pick guard that I bought at a pawn shop in Colorado while visiting my friend."
+  },
+  {
+    model: null,
+    brand: "Franciscan",
+    year: null,
+    imageName: "franciscan",
+    history: "Formerly my dad's guitar, he gave it to me when his hands could no longer play."
+  },
+  {
+    model: "P-BASS",
+    brand: "Fender Squier",
+    year: null,
+    imageName: "p-bass",
+    history: "My first bass, bought basically new at a pawn shop in Colorado while visiting my friend."
+  },
+  {
+    model: null,
+    brand: "Sierra",
+    year: null,
+    imageName: "sierra",
+    history: "A gift I received."
+  },
+  {
+    model: "Bossman Blue Suede Shoes",
+    brand: "Hardluck Kings",
+    year: null,
+    imageName: "bossman",
+    history: "An open-box find and impulse buy that didn't really fit in my collection."
+  },
 ]

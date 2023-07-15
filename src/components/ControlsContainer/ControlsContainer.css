@@ -2,3 +2,7 @@
   background-color: green;
   grid-area: controls-container;
 }
+
+.select-hint {
+  color: darkgray;
+}
