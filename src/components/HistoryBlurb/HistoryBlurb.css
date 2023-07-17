@@ -1,4 +1,7 @@
 .history-blurb {
-  background-color: red;
-  grid-area: history-blurb
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  font-weight: 400;
+  grid-area: history-blurb;
+  padding: 8px;
 }

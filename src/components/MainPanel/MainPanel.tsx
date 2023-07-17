@@ -11,32 +11,35 @@ import { data } from '../../guitar-data'
 export const MainPanel: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string|null>(`img/front/${data[0].imageName}.jpg`)
   const [history, setHistory] = useState<string|null>(data[0].history)
-  const [selectedIndex, setSelectedIndex] = useState<number>(0)
+  const [selectedId, setSelectedId] = useState<number>(0)
 
   useEffect(() => {
-    let index:number = 0
-    if (window.location.hash) {
-      const hashedPart:string = window.location.hash.split('#')[1]
-      const hashedNumber:number = parseInt(hashedPart)
-      if (isNaN(hashedNumber)) index = 0
-      index = hashedNumber
+    const params = new URLSearchParams(window.location.search)
+    if (params.has('id')) {
+      const idParam = params.get('id')
+      if (idParam === null) {
+        setImageUrl('img/missing-guitar.jpg')
+        setHistory('No guitar ID provided.')
+        return
+      }
+      const id: number = parseInt(idParam)
+      if (isNaN(id)) {
+        setImageUrl('img/missing-guitar.jpg')
+        setHistory('Invalid ID provided.')
+        return
+      }
+      setImageUrl(`img/front/${data[id].imageName}.jpg`)
+      setHistory(data[id].history)
+      setSelectedId(id)
     }
-    setSelectedIndex(index)
   }, [])
-
-  useEffect(() => {
-    setImageUrl(`img/front/${data[selectedIndex].imageName}.jpg`)
-    setHistory(data[selectedIndex].history)
-  }, [selectedIndex])
 
   return (
     <div className="main-panel">
       <ControlsContainer
-        data={data}
-        selectedIndex={selectedIndex}
-        setSelectedIndex={setSelectedIndex}
+        selectedId={selectedId}
       />
-      <GuitarFrame imageUrl={imageUrl} imageIndex={selectedIndex}/>
+      <GuitarFrame imageUrl={imageUrl} />
       <HistoryBlurb copy={history} />
     </div>
   )

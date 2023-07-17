@@ -1,48 +1,39 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+
+import { data } from '../../guitar-data'
 
 import './ControlsContainer.css'
 
-import { GuitarData } from '../../types/types';
-
 export type ControlsContainerProps = {
-  data: GuitarData[],
-  selectedIndex: number,
-  setSelectedIndex: (n: number) => void
+  selectedId: number,
 }
 
 export const ControlsContainer: React.FC<ControlsContainerProps> = ({
-  data,
-  selectedIndex,
-  setSelectedIndex
+  selectedId
 }) => {
-  const [selected, setSelected] = useState<number>(0)
-
-  useEffect(() => {
-    setSelected(selectedIndex)
-    const selectElement: HTMLSelectElement = document.getElementById('guitars') as HTMLSelectElement
-    if (!selectElement) return
-    selectElement.value = selectedIndex.toString()
-  }, [selectedIndex])
-
   return (
     <div className="controls-container">
+      Guitars:&nbsp;
       <select
         name="guitars"
         id="guitars"
         onChange={(event) => {
-          const newIndex = event.target.value
-          setSelectedIndex(parseInt(newIndex))
-          window.location.hash = `#${newIndex}`
+          const newId = event.target.value
+          const proto = (new URL(window.location.toString())).protocol;
+          const host = (new URL(window.location.toString())).host;
+          const params = new URLSearchParams()
+          params.set('id', newId)
+          window.location.href = `${proto}//${host}?${params.toString()}`
         }}
-        value={selected}
+        value={selectedId}
       >
-        {data.map((guitar, index) => {
+        {data.map((guitar, id) => {
           const year = guitar.year ? `${guitar.year} ` : ''
           const brand = guitar.brand ? `${guitar.brand} ` : ''
           const model = guitar.model || 'Unknown Guitar'
 
           return (
-            <option value={index} key={index}>{`${year}${brand}${model}`}</option>
+            <option value={id} key={id}>{`${year}${brand}${model}`}</option>
           )
         })}
       </select>

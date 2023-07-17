@@ -2,13 +2,12 @@ import React from 'react'
 import './GuitarFrame.css'
 
 export type GuitarFrameProps = {
-  imageUrl: string|null,
-  imageIndex: number|null
+  imageUrl: string|null
 }
 
 const fallback = 'img/missing-guitar.jpg'
 
-export const GuitarFrame: React.FC<GuitarFrameProps> = ({ imageUrl, imageIndex }) => {
+export const GuitarFrame: React.FC<GuitarFrameProps> = ({ imageUrl }) => {
   return (
     <div className="guitar-frame-container">
       <a href={imageUrl || fallback}>
