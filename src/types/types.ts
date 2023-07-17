@@ -1,4 +1,5 @@
 export type GuitarData = {
+  id: number,
   model: string|null,
   brand: string|null,
   year: number|null,
