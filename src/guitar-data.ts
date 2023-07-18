@@ -67,7 +67,7 @@ export const data: GuitarData[] = [
   },
   {
     id: 8,
-    model: "Handmade",
+    model: "LP Clone",
     brand: "StewMac",
     year: 2021,
     imageName: "lp-clone",
@@ -75,26 +75,26 @@ export const data: GuitarData[] = [
   },
   {
     id: 9,
-    model: "Tiny Boy",
-    brand: null,
+    model: "1F-50CS",
+    brand: "Tiny Boy",
     year: null,
-    imageName: "tiny-boy",
+    imageName: "1f-50cs",
     history: "A gift I got in Japan that I brought home to Los Angeles with me."
   },
   {
     id: 10,
-    model: "Handmade",
-    brand: null,
+    model: "Handmade Carbon Pick Guard",
+    brand: "Unknown",
     year: null,
     imageName: "carbon",
     history: "A hand made partscaster with a carbon fiber pick guard that I bought at a pawn shop in Colorado while visiting my friend."
   },
   {
     id: 11,
-    model: null,
+    model: "CS-6",
     brand: "Franciscan",
     year: null,
-    imageName: "franciscan",
+    imageName: "cs-6",
     history: "Formerly my dad's guitar, he gave it to me when his hands could no longer play."
   },
   {
@@ -107,10 +107,10 @@ export const data: GuitarData[] = [
   },
   {
     id: 13,
-    model: null,
+    model: "S341",
     brand: "Sierra",
     year: null,
-    imageName: "sierra",
+    imageName: "s341",
     history: "A gift I received."
   },
   {
@@ -120,5 +120,21 @@ export const data: GuitarData[] = [
     year: null,
     imageName: "bossman",
     history: "An open-box find and impulse buy that didn't really fit in my collection."
+  },
+  {
+    id: 15,
+    model: "ES-335 Clone",
+    brand: "StewMac",
+    year: 2021,
+    imageName: "mint-chip",
+    history: "A guitar I built and painted from a StewMac kit to resemble the colors of my favorite ice cream flavor."
+  },
+  {
+    id: 16,
+    model: "LP Clone",
+    brand: "Grote",
+    year: null,
+    imageName: "grote",
+    history: "An LP clone I bought at an auction in San Luis Obispo."
   },
 ]

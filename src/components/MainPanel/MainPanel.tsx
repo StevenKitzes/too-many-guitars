@@ -12,9 +12,11 @@ export const MainPanel: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string|null>(`img/front/${data[0].imageName}.jpg`)
   const [history, setHistory] = useState<string|null>(data[0].history)
   const [selectedId, setSelectedId] = useState<number>(0)
+  const [selectedBrand, setSelectedBrand] = useState<string>("Unknown")
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
+
     if (params.has('id')) {
       const idParam = params.get('id')
       if (idParam === null) {
@@ -32,11 +34,21 @@ export const MainPanel: React.FC = () => {
       setHistory(data[id].history)
       setSelectedId(id)
     }
+
+    if (params.has('brand')) {
+      const brandParam = params.get('brand')
+      if (brandParam === null) {
+        setSelectedBrand("Unknown")
+        return
+      }
+      setSelectedBrand(brandParam)
+    }
   }, [])
 
   return (
     <div className="main-panel">
       <ControlsContainer
+        selectedBrand={selectedBrand}
         selectedId={selectedId}
       />
       <GuitarFrame imageUrl={imageUrl} />
