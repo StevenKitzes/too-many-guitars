@@ -2,54 +2,83 @@ import React, { useEffect, useState } from 'react'
 
 import './MainPanel.css'
 
+import { GuitarData } from '../../types/types'
+
 import { GuitarFrame } from '../GuitarFrame/GuitarFrame'
 import { HistoryBlurb } from '../HistoryBlurb/HistoryBlurb'
 import { ControlsContainer } from '../ControlsContainer/ControlsContainer'
 
-import { data } from '../../guitar-data'
+import { rawData } from '../../guitar-data'
 
 export const MainPanel: React.FC = () => {
-  const [imageUrl, setImageUrl] = useState<string|null>(`img/front/${data[0].imageName}.jpg`)
-  const [history, setHistory] = useState<string|null>(data[0].history)
-  const [selectedId, setSelectedId] = useState<number>(0)
-  const [selectedBrand, setSelectedBrand] = useState<string>("Unknown")
+  const data: GuitarData[] = rawData.map((guitar, index) => ({
+    id: index.toString(),
+    type: guitar.type || "Unknown type",
+    model: guitar.model || "Unknown model",
+    brand: guitar.brand || "Unknown brand",
+    year: guitar.year || "Unknown year",
+    imageName: guitar.imageName || "missing",
+    history: guitar.history || "No history has been recorded for this guitar."
+  }))
+  const fallbackGuitar: GuitarData = data[0]
 
+  const [imageUrl, setImageUrl] = useState<string>(`img/front/${fallbackGuitar.imageName}.jpg`)
+  const [history, setHistory] = useState<string>(fallbackGuitar.history)
+  const [selectedId, setSelectedId] = useState<string>(fallbackGuitar.id)
+  const [rear, setRear] = useState<boolean>(false)
+  const [selectedType, setSelectedType] = useState<string>("All types")
+
+  // parse url params
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
+
+    let face: string = 'front';
+    if (params.has('rear')) {
+      const r = params.get('rear')
+      if (r === 'true') {
+        face = 'back'
+        setRear(true)
+      }
+      else {
+        face = 'front'
+        setRear(false)
+      }
+    }
 
     if (params.has('id')) {
       const idParam = params.get('id')
       if (idParam === null) {
+        // id var exists but no value, default to first available guitar
         setImageUrl('img/missing-guitar.jpg')
         setHistory('No guitar ID provided.')
         return
       }
-      const id: number = parseInt(idParam)
-      if (isNaN(id)) {
+      if (isNaN(parseInt(idParam))) {
         setImageUrl('img/missing-guitar.jpg')
         setHistory('Invalid ID provided.')
         return
       }
-      setImageUrl(`img/front/${data[id].imageName}.jpg`)
-      setHistory(data[id].history)
-      setSelectedId(id)
+      const guitar: GuitarData = data.find(g => g.id === idParam) || fallbackGuitar
+      setImageUrl(`img/${face}/${guitar.imageName}.jpg`)
+      setHistory(guitar.history)
+      setSelectedId(idParam)
     }
 
-    if (params.has('brand')) {
-      const brandParam = params.get('brand')
-      if (brandParam === null) {
-        setSelectedBrand("Unknown")
-        return
-      }
-      setSelectedBrand(brandParam)
+    if (params.has('type')) {
+      const typeParam = params.get('type')
+      if (typeParam === null) setSelectedType("All types")
+      else setSelectedType(typeParam)
     }
-  }, [])
+  }, [data, fallbackGuitar])
 
   return (
     <div className="main-panel">
       <ControlsContainer
-        selectedBrand={selectedBrand}
+        data={data}
+        fallbackGuitar={fallbackGuitar}
+        rear={rear}
         selectedId={selectedId}
+        selectedType={selectedType}
       />
       <GuitarFrame imageUrl={imageUrl} />
       <HistoryBlurb copy={history} />

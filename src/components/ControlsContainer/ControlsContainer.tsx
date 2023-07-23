@@ -1,44 +1,56 @@
 import React from 'react'
 
-import { data } from '../../guitar-data'
+import { GuitarData } from '../../types/types'
 
 import './ControlsContainer.css'
 
-function buildUrlAndNavigate() {
-  const guitarsSelect: HTMLSelectElement = document.getElementById('guitars') as HTMLSelectElement
-  let guitarsValue: number = parseInt(guitarsSelect.value)
-
-  const brandsSelect: HTMLSelectElement = document.getElementById('brands') as HTMLSelectElement
-  const brandsValue: string = brandsSelect.value
-
-  if (brandsValue !== "All brands" && data[guitarsValue].brand !== brandsValue) {
-    let guitar = 0
-    while (data[guitar].brand !== brandsValue) {
-      guitar++
-    }
-    guitarsValue = guitar
-  }
-
-  const proto: string = (new URL(window.location.toString())).protocol;
-  const host: string = (new URL(window.location.toString())).host;
-
-  const params = new URLSearchParams()
-  params.set('id', guitarsValue.toString())
-  params.set('brand', brandsValue)
-  
-  window.location.href = `${proto}//${host}?${params.toString()}`
-}
-
 export type ControlsContainerProps = {
-  selectedBrand: string,
-  selectedId: number,
+  data: GuitarData[],
+  fallbackGuitar: GuitarData,
+  rear: boolean,
+  selectedId: string,
+  selectedType: string,
 }
 
 export const ControlsContainer: React.FC<ControlsContainerProps> = ({
-  selectedBrand,
-  selectedId
+  data,
+  fallbackGuitar,
+  rear,
+  selectedId,
+  selectedType
 }) => {
-  const brands: string[] = Array.from(new Set(data.map(guitar => guitar.brand || "Unknown")));
+  function buildUrlAndNavigate() {
+    // get guitar select html element and value
+    const guitarsSelect: HTMLSelectElement = document.getElementById('guitars') as HTMLSelectElement
+    let guitarsValue: number = parseInt(guitarsSelect.value)
+
+    // get rear view checkbox element and value
+    const rearCheckbox: HTMLInputElement = document.getElementById('rear') as HTMLInputElement
+    const rearValue: boolean = rearCheckbox.checked
+
+    // get types select html element and value
+    const typesSelect: HTMLSelectElement = document.getElementById('types') as HTMLSelectElement
+    let typesValue: string = typesSelect.value
+
+    // if guitar in current view doesn't match selected type
+    if (data[guitarsValue].type !== typesValue) {
+      guitarsValue = parseInt(
+        (data.find(d => d.type === typesValue) || fallbackGuitar).id
+      )
+    }
+  
+    const protocol: string = (new URL(window.location.toString())).protocol;
+    const host: string = (new URL(window.location.toString())).host;
+    const params: URLSearchParams = new URLSearchParams(window.location.search)
+
+    params.set('id', guitarsValue.toString())
+    params.set('type', typesValue)
+    params.set('rear', rearValue.toString())
+
+    window.location.href = `${protocol}//${host}?${params.toString()}`
+  }
+
+  const types: string[] = Array.from(new Set(data.map(guitar => guitar.type)));
 
   return (
     <div className="controls-container">
@@ -51,28 +63,43 @@ export const ControlsContainer: React.FC<ControlsContainerProps> = ({
         }}
         value={selectedId}
       >
-        {data.filter(d => d.brand === selectedBrand || "All brands" === selectedBrand).map(guitar => {
-          const year = guitar.year ? `${guitar.year} ` : ''
-          const brand = guitar.brand ? `${guitar.brand} ` : ''
-          const model = guitar.model || 'Unknown Guitar'
+        {data
+          .filter(d => selectedType === "All types" || selectedType === d.type)
+          .map(guitar => {
+            const year = guitar.year === 'Unknown year' ? '' : `${guitar.year} `
+            const brand = `${guitar.brand} - `
+            const model = guitar.model
 
-          return (
-            <option value={guitar.id} key={guitar.id}>{`${year}${brand}${model}`}</option>
-          )
-        })}
+            return (
+              <option value={guitar.id} key={guitar.id}>{`${year}${brand}${model}`}</option>
+            )
+          }
+        )}
       </select>
       &nbsp;
-      Filter by brand:&nbsp;
-      <select
-        name="brands"
-        id="brands"
+      Rear view:
+      &nbsp;
+      <input
+        id="rear"
         onChange={() => {
           buildUrlAndNavigate()
         }}
-        value={selectedBrand}
+        type="checkbox"
+        checked={rear}
+      />
+
+      &nbsp;
+      Filter by type:&nbsp;
+      <select
+        name="types"
+        id="types"
+        onChange={() => {
+          buildUrlAndNavigate()
+        }}
+        value={selectedType}
       >
-        <option value={"All brands"} key={"All brands"}>All brands</option>
-        {brands.map(brand => <option value={brand} key={brand}>{brand}</option>)}
+        <option value={"All types"} key={"All types"}>All types</option>
+        {types.map(type => <option value={type} key={type}>{type}</option>)}
       </select>
     </div>
   )
