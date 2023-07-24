@@ -17,6 +17,11 @@ echo "$ cp -R build/ ."
 cp -R build/ .
 
 echo ""
+echo "Make sure all files staged for Git commit:"
+echo "$ git add -A"
+git add -A
+
+echo ""
 echo "Create Git commit:"
 echo "$ git commit -am 'updating gh-pages content . . .'"
 git commit -am "updating gh-pages content . . ."
