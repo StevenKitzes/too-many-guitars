@@ -41,13 +41,14 @@ export const ControlsContainer: React.FC<ControlsContainerProps> = ({
   
     const protocol: string = (new URL(window.location.toString())).protocol;
     const host: string = (new URL(window.location.toString())).host;
+    const path: string = (new URL(window.location.toString())).pathname;
     const params: URLSearchParams = new URLSearchParams(window.location.search)
 
     params.set('id', guitarsValue.toString())
     params.set('type', typesValue)
     params.set('rear', rearValue.toString())
 
-    window.location.href = `${protocol}//${host}?${params.toString()}`
+    window.location.href = `${protocol}//${host}${path}?${params.toString()}`
   }
 
   const types: string[] = Array.from(new Set(data.map(guitar => guitar.type)));
