@@ -12,6 +12,13 @@ echo "$ git checkout gh-pages"
 git checkout gh-pages
 
 echo ""
+echo "Clean old build content:"
+echo "$ rm -rf img"
+echo "$ rm -rf static"
+rm -rf img
+rm -rf static
+
+echo ""
 echo "Copy build folder to root:"
 echo "$ cp -R build/ ."
 cp -R build/ .
