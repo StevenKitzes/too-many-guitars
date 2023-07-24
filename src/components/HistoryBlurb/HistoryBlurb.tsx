@@ -11,7 +11,7 @@ const fallback = "This guitar doesn't have a historical record on file."
 export const HistoryBlurb: React.FC<HistoryBlurbProps> = ({ copy }) => {
   return (
     <div className="history-blurb">
-      {copy || fallback}
+      {`${copy || fallback}`}
     </div>
   )
 }

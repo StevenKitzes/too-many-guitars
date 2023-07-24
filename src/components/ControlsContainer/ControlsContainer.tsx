@@ -23,17 +23,17 @@ export const ControlsContainer: React.FC<ControlsContainerProps> = ({
     // get guitar select html element and value
     const guitarsSelect: HTMLSelectElement = document.getElementById('guitars') as HTMLSelectElement
     let guitarsValue: number = parseInt(guitarsSelect.value)
-
+    
     // get rear view checkbox element and value
     const rearCheckbox: HTMLInputElement = document.getElementById('rear') as HTMLInputElement
     const rearValue: boolean = rearCheckbox.checked
-
+    
     // get types select html element and value
     const typesSelect: HTMLSelectElement = document.getElementById('types') as HTMLSelectElement
     let typesValue: string = typesSelect.value
-
+    
     // if guitar in current view doesn't match selected type
-    if (data[guitarsValue].type !== typesValue) {
+    if (typesValue !== "All types" && data[guitarsValue].type !== typesValue) {
       guitarsValue = parseInt(
         (data.find(d => d.type === typesValue) || fallbackGuitar).id
       )
