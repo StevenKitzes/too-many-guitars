@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6ccf8d28.css",
+    "main.js": "/static/js/main.13ab1a91.js",
+    "static/js/787.8162dd60.chunk.js": "/static/js/787.8162dd60.chunk.js",
+    "static/media/guitar-background.jpg": "/static/media/guitar-background.7d479925581cab25a5e3.jpg",
+    "index.html": "/index.html",
+    "main.6ccf8d28.css.map": "/static/css/main.6ccf8d28.css.map",
+    "main.13ab1a91.js.map": "/static/js/main.13ab1a91.js.map",
+    "787.8162dd60.chunk.js.map": "/static/js/787.8162dd60.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ccf8d28.css",
+    "static/js/main.13ab1a91.js"
+  ]
+}
