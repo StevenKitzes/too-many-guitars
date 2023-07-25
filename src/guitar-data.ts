@@ -15,7 +15,7 @@ export const rawData: RawGuitarData[] = [
     brand: "Ibanez",
     year: "1994",
     imageName: "rg450",
-    history: "My first fancy guitar."
+    history: "This was my second guitar, and the first I ever paid for with my own money.  After my first guitar, a Fender Squier Strat, I wanted something a little fancier and a little nicer, and something that would better fit the type of playing I aspired to at the time.  I had been listening to a lot of hard rock and heavy metal, and my friend had been taking me to see a local band he knew playing shows in Hollywood.  They played some pretty hard rock, and I was mesmerized by the persona of the rhythm guitarist, who wore costumes and played - you guessed it - an Ibanez.  I got to meet the guy, Sean de la Tour of the band Guilt by Association, was in a class with him at school, and he even invited me to a jam session, and I got it into my head that I needed an Ibanez of my own.\n\nThis RG 450 was my first foray into \"grown-up\" guitars, and cost a pretty penny in its day.  It came with a premium, Ibanez-branded hard case, and had locking strings with a Floyd Rose floating bridge, lending it even more of a professional air.  I couldn't play it for crap at the time, but it came with me to college and was the guitar that I used to learn my first really challenging songs.  Most notably, I delved into some Opeth with this guitar.\n\nLater in life, this guitar spent some time neglected, and I even considered selling it for a time.  It was falling into disrepair and I didn't know how to take care of it properly.  More recently in life, however, I've learned a lot more about guitar maintenance, and with the help of my girlfriend's uncle, gave this guitar a complete overhaul, bringing it to near-new condition.  Because of this guitar I now know how to do a proper setup on a guitar with locking strings and a floating trem."
   },
   {
     type: "Electric",
@@ -23,7 +23,7 @@ export const rawData: RawGuitarData[] = [
     brand: "Durazo",
     year: "2021",
     imageName: "durazo",
-    history: "My friend and I sourced parts and built this guitar up from raw wood."
+    history: "I made friends with twin dudes when I returned to college late in life to chase a career change, and through them I met a friend who built guitars from near-scratch.  He even won contests with some of them, and was (very casually) tossing around the idea of making them a side gig.  I was so impressed at the time that I asked him if he would be interested in making one for me.  Together we went over my desired specifications.  I chose the shape, color, hardware, strings, which wood we'd use for the body, everything.  We sourced parts and raw materials online, and Mr Durazo got down to work.\n\nIn the end, it was a very expensive project, especially considering Mr Durazo's time, and ultimatley we weren't quite able to meet the specifications I had hoped for.  Unfortunately, this is not one of my favorite guitars, in part because the fit-and-finish and color were not a match for what I'd hoped for, and more importantly because the balance and geometry make it a bit difficult to play.  So while I'm happy to have had this project in my life, it hasn't seen a lot of play time in my hands."
   },
   {
     type: "Electric",
