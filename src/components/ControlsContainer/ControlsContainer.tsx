@@ -67,12 +67,12 @@ export const ControlsContainer: React.FC<ControlsContainerProps> = ({
         {data
           .filter(d => selectedType === "All types" || selectedType === d.type)
           .map(guitar => {
-            const year = guitar.year === 'Unknown year' ? '' : `${guitar.year} `
             const brand = `${guitar.brand} - `
             const model = guitar.model
+            const year = guitar.year === 'Unknown' ? ' - year unknown' : ` (${guitar.year})`
 
             return (
-              <option value={guitar.id} key={guitar.id}>{`${year}${brand}${model}`}</option>
+              <option value={guitar.id} key={guitar.id}>{`${brand}${model}${year}`}</option>
             )
           }
         )}

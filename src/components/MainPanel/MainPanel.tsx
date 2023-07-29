@@ -16,7 +16,7 @@ export const MainPanel: React.FC = () => {
     type: guitar.type || "Unknown type",
     model: guitar.model || "Unknown model",
     brand: guitar.brand || "Unknown brand",
-    year: guitar.year || "Unknown year",
+    year: guitar.year || "Unknown",
     imageName: guitar.imageName || "missing",
     history: guitar.history || "No history has been recorded for this guitar."
   }))

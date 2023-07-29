@@ -29,7 +29,7 @@ export const rawData: RawGuitarData[] = [
     type: "Electric",
     model: "Squier Strat",
     brand: "Fender",
-    year: null,
+    year: "2000",
     imageName: "squier",
     history: "A gift I received."
   },
@@ -45,7 +45,7 @@ export const rawData: RawGuitarData[] = [
     type: "Electric",
     model: "CR-6",
     brand: "Schecter",
-    year: null,
+    year: "2021",
     imageName: "cr-6",
     history: "My first serious player's guitar."
   },
