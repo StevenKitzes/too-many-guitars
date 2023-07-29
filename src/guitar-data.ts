@@ -31,7 +31,7 @@ export const rawData: RawGuitarData[] = [
     brand: "Fender",
     year: "2000",
     imageName: "squier",
-    history: "A gift I received."
+    history: "This guitar was kind of a hand-me-down.  A girl I dated had it sitting in her dad's closet, disused, for 20 years.  She had gotten it as a gift in high school, hoping to learn to play, but never got around to it.  It sat and corroded until one day she gave it to me because she knew she was never going to use it.  The internal corrosion was bad enough that the whammy bar seized in the bridge and snapped at the threads, but luckily the electronics were all intact and the exterior was super clean.  I was also happy to have it because it is an exact copy of the first guitar I ever had, down to the color, making it a very interesting window into my guitar history.  It's really cool to be able to see my modified Squier side-by-side with an untouched original."
   },
   {
     type: "Electric",
@@ -39,7 +39,7 @@ export const rawData: RawGuitarData[] = [
     brand: "Hamer",
     year: null,
     imageName: "slammer",
-    history: "A guitar I bought as a souvenier in a Santa Barbara antique consignment shop."
+    history: "There was a brief period of time during which I thought I wanted to keep a cheap beater guitar around to keep in the office at work, lend to friends who wanted to learn guitar, etc.  It was right around that time that I went on a road trip to Santa Barbara, and on that road trip, my date suggested we visit some antique shops downtown.  In the moment, I had no thoughts of looking for guitars, but one of the shops had this Hamer on consignment, tucked away in a corner.  At the listed $150 I was hesitant, but my date went into haggle mode and got the price down to $100; the shop had to call the guitar's owner but it worked out.  The experience taught me a good deal about haggling in those kinds of situations, and also gave me the crackpot idea that I wanted to buy dirt-cheap guitars as souvenirs on trips from that point forward."
   },
   {
     type: "Electric",
@@ -47,7 +47,7 @@ export const rawData: RawGuitarData[] = [
     brand: "Schecter",
     year: "2021",
     imageName: "cr-6",
-    history: "My first serious player's guitar."
+    history: "This was my first truly high-quality guitar.  I remember going into the Guitar Center in Sherman Oaks, looking to buy a beautiful, yellow, flame maple top PRS semi-hollow body that they had on the wall.  But while I was in there, I saw that they had this gorgeous CR-6 on a floor stand.  I was so taken by the undyed poplar burl top that I decided I wanted to try playing it to see if it was a nice guitar, or just for show.  I recall playing Minor Swing, a Django Reinhardt tune I was working on at the time, and having such a good time with it that I forgot to concentrate on the song, forgot to think about the guitar, and the joy of playing just spilled out of my fingers.  It was quite glorious!  The more I looked at the poplar top, the more I thought it looked like a museum piece, so pretty, so I forsook the PRS and bought the Schecter instead.\n\nI also remember putting my haggling skills to use on this one.  Being a floor model, it had a couple imperfections from being play tested and jostled about.  Pointing these out, I asked if they could take anyting off the price, and the dude talked his manager into giving me $40 off, which was most of the tax and made me happy.\n\nLater that night, I remember calling the store to talk to Edward, the guy who sold me the guitar.  I could tell in his voice he was afraid that I was another ornery customer calling to complain, but I was calling to thank him for his help, the price break, and the guitar, which I adored.  It seriously made his day."
   },
   {
     type: "Semi-hollow",
@@ -55,7 +55,7 @@ export const rawData: RawGuitarData[] = [
     brand: "Paul Reed Smith",
     year: null,
     imageName: "se-custom-22",
-    history: "My fanciest and best guitar from the maker I've been into for years."
+    history: "I remember seeing this guitar on the wall at the Guitar Center in Sherman Oaks for the first time, and thinking to myself, why would anyone want that in yellow?  Then, weeks later, I remember the feeling of sitting at home remembering that yellow guitar and realizing that yes, *I* wanted it.  That golden yellow flame maple top with the single f-hole of the semi-hollow body design had burnt into my brain and wouldn't get out.  It didn't hurt that I had always, for over a decade, wanted a PRS in my collection because of the lovely blue one my friend Earl had.  When I finally worked up the courage to walk into the Guitar Center and buy it, it was still there, but there was a museum-quality Schecter on the floor that intercepted my affections, and I bought that instead.  The next time I went into that Guitar Center (for strings or whatever it was that I needed), the yellow PRS was gone, sold, so I figured the universe was telling me I just didn't need it after all.\n\nFast forward another few months, I was in the Guitar Center again, shopping for parts for my Frankenstein Squier.  Lo and behold, that same yellow PRS was back, now in the used section and for $300 off the original price.  Someone had eaten the depreciation off the top and left me with a mint PRS for a cut-rate price.  The universe really did want me to have this PRS!  It is probably my favorite guitar (though it does face stiff competition)."
   },
   {
     type: "Electric",
