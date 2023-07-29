@@ -5,7 +5,7 @@ export type GuitarFrameProps = {
   imageUrl: string|null
 }
 
-const fallback = 'too-many-guitars/img/missing-guitar.jpg'
+const fallback = 'img/missing-guitar.jpg'
 
 export const GuitarFrame: React.FC<GuitarFrameProps> = ({ imageUrl }) => {
   return (
@@ -14,7 +14,7 @@ export const GuitarFrame: React.FC<GuitarFrameProps> = ({ imageUrl }) => {
         <img
           alt="Golden frame"
           className="guitar-frame"
-          src="too-many-guitars/img/frame-original.png"
+          src="img/frame-original.png"
         />
       </a>
       <div className="guitar-image-with-shadow" style={{ backgroundImage: `url("${imageUrl || fallback}")` }} />

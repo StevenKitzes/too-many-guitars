@@ -22,7 +22,7 @@ export const MainPanel: React.FC = () => {
   }))
   const fallbackGuitar: GuitarData = data[0]
 
-  const [imageUrl, setImageUrl] = useState<string>(`too-many-guitars/img/front/${fallbackGuitar.imageName}.jpg`)
+  const [imageUrl, setImageUrl] = useState<string>(`img/front/${fallbackGuitar.imageName}.jpg`)
   const [history, setHistory] = useState<string>(fallbackGuitar.history)
   const [selectedId, setSelectedId] = useState<string>(fallbackGuitar.id)
   const [rear, setRear] = useState<boolean>(false)
@@ -49,17 +49,17 @@ export const MainPanel: React.FC = () => {
       const idParam = params.get('id')
       if (idParam === null) {
         // id var exists but no value, default to first available guitar
-        setImageUrl('too-many-guitars/img/missing-guitar.jpg')
+        setImageUrl('img/missing-guitar.jpg')
         setHistory('No guitar ID provided.')
         return
       }
       if (isNaN(parseInt(idParam))) {
-        setImageUrl('too-many-guitars/img/missing-guitar.jpg')
+        setImageUrl('img/missing-guitar.jpg')
         setHistory('Invalid ID provided.')
         return
       }
       const guitar: GuitarData = data.find(g => g.id === idParam) || fallbackGuitar
-      setImageUrl(`too-many-guitars/img/${face}/${guitar.imageName}.jpg`)
+      setImageUrl(`img/${face}/${guitar.imageName}.jpg`)
       setHistory(guitar.history)
       setSelectedId(idParam)
     }
