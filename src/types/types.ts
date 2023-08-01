@@ -3,7 +3,8 @@ export type RawGuitarData = {
   model: string|null,
   brand: string|null,
   year: string|null,
-  imageName: string|null,
+  imageFront: string|null,
+  imageBack: string|null,
   history: string|null
 }
 
@@ -13,6 +14,7 @@ export type GuitarData = {
   model: string,
   brand: string,
   year: string,
-  imageName: string,
+  imageFront: string|null,
+  imageBack: string|null,
   history: string
 }

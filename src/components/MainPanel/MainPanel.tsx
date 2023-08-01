@@ -17,7 +17,8 @@ export const MainPanel: React.FC = () => {
     model: guitar.model || "Unknown model",
     brand: guitar.brand || "Unknown brand",
     year: guitar.year || "Unknown",
-    imageName: guitar.imageName || "missing",
+    imageFront: guitar.imageFront,
+    imageBack: guitar.imageBack,
     history: guitar.history || "No history has been recorded for this guitar."
   }))
   const fallbackGuitar: GuitarData = data[0]
@@ -46,9 +47,12 @@ export const MainPanel: React.FC = () => {
       }
     }
     
-    let guitarImage: string = `${newUrlPrefix}img/front/${fallbackGuitar.imageName}.jpg`
+    let guitarImage: string = fallbackGuitar.imageFront
+      ? `${newUrlPrefix}img/front/${fallbackGuitar.imageFront}.jpg`
+      : `${newUrlPrefix}img/missing-guitar.jpg`
     let guitarHistory: string = fallbackGuitar.history
     let guitarId: string = fallbackGuitar.id
+
     if (params.has('id')) {
       const idParam = params.get('id')
       if (idParam === null) {
@@ -61,7 +65,15 @@ export const MainPanel: React.FC = () => {
       }
 
       const guitar = data.find(g => g.id === idParam) || fallbackGuitar
-      guitarImage = `${newUrlPrefix}img/${face}/${guitar.imageName}.jpg`
+      if (face === 'front') {
+        guitarImage = guitar.imageFront
+          ? `${newUrlPrefix}img/front/${guitar.imageFront}.jpg`
+          : `${newUrlPrefix}img/missing-guitar.jpg`
+      } else {
+        guitarImage = guitar.imageBack
+          ? `${newUrlPrefix}img/back/${guitar.imageBack}.jpg`
+          : `${newUrlPrefix}img/missing-guitar.jpg`
+      }
       guitarHistory = guitar.history
       guitarId = idParam || fallbackGuitar.id
     }
