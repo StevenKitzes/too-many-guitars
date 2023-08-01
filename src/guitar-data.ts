@@ -24,8 +24,8 @@ export const rawData: RawGuitarData[] = [
     model: "Handmade",
     brand: "Durazo",
     year: "2021",
-    imageFront: null,
-    imageBack: null,
+    imageFront: "durazo",
+    imageBack: "durazo",
     history: "I made friends with twin dudes when I returned to college late in life to chase a career change, and through them I met a friend who built guitars from near-scratch.  He even won contests with some of them, and was (very casually) tossing around the idea of making them a side gig.  I was so impressed at the time that I asked him if he would be interested in making one for me.  Together we went over my desired specifications.  I chose the shape, color, hardware, strings, which wood we'd use for the body, everything.  We sourced parts and raw materials online, and Mr Durazo got down to work.\n\nIn the end, it was a very expensive project, especially considering Mr Durazo's time, and ultimatley we weren't quite able to meet the specifications I had hoped for.  Unfortunately, this is not one of my favorite guitars, in part because the fit-and-finish and color were not a match for what I'd hoped for, and more importantly because the balance and geometry make it a bit difficult to play.  So while I'm happy to have had this project in my life, it hasn't seen a lot of play time in my hands."
   },
   {
@@ -33,8 +33,8 @@ export const rawData: RawGuitarData[] = [
     model: "Squier Strat",
     brand: "Fender",
     year: "2000",
-    imageFront: null,
-    imageBack: null,
+    imageFront: "squier-strat",
+    imageBack: "squier-strat",
     history: "This guitar was kind of a hand-me-down.  A girl I dated had it sitting in her dad's closet, disused, for 20 years.  She had gotten it as a gift in high school, hoping to learn to play, but never got around to it.  It sat and corroded until one day she gave it to me because she knew she was never going to use it.  The internal corrosion was bad enough that the whammy bar seized in the bridge and snapped at the threads, but luckily the electronics were all intact and the exterior was super clean.  I was also happy to have it because it is an exact copy of the first guitar I ever had, down to the color, making it a very interesting window into my guitar history.  It's really cool to be able to see my modified Squier side-by-side with an untouched original."
   },
   {
@@ -69,8 +69,8 @@ export const rawData: RawGuitarData[] = [
     model: "S561",
     brand: "Ibanez",
     year: "2022",
-    imageFront: null,
-    imageBack: null,
+    imageFront: "s561",
+    imageBack: "s561",
     history: "Bought this to have it signed by Nita Strauss at an event at Guitar Center in Hollywood.  It's a Cor-Tek Indonesian-made guitar and kinda feels like a weird mix of a budget guitar in the way it plays, though the feel of the materials and the fit and finish are excellent.  Very strange.  Might need to experiment with different strings."
   },
   {
@@ -132,8 +132,8 @@ export const rawData: RawGuitarData[] = [
     model: "Bossman Blue Suede Shoes",
     brand: "Hardluck Kings",
     year: "2022",
-    imageFront: null,
-    imageBack: null,
+    imageFront: "bossman",
+    imageBack: "bossman",
     history: "An open-box find and impulse buy that in the end sadly didn't really fit in my collection."
   },
   {
