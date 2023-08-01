@@ -22,55 +22,66 @@ export const MainPanel: React.FC = () => {
   }))
   const fallbackGuitar: GuitarData = data[0]
 
-  const [imageUrl, setImageUrl] = useState<string>(`img/front/${fallbackGuitar.imageName}.jpg`)
+  const [imageUrl, setImageUrl] = useState<string>("")
   const [history, setHistory] = useState<string>(fallbackGuitar.history)
   const [selectedId, setSelectedId] = useState<string>(fallbackGuitar.id)
   const [rear, setRear] = useState<boolean>(false)
   const [selectedType, setSelectedType] = useState<string>("All types")
+  const [localhostPrefix, setLocalhostPrefix] = useState<string>("")
 
   // parse url params
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
-
+    const { host } = window.location
+    const newUrlPrefix = host.indexOf('localhost') > -1 ? "too-many-guitars/" : ""
+    
     let face: string = 'front';
     if (params.has('rear')) {
       const r = params.get('rear')
       if (r === 'true') {
         face = 'back'
-        setRear(true)
       }
       else {
         face = 'front'
-        setRear(false)
       }
     }
-
+    
+    let guitarImage: string = `${newUrlPrefix}img/front/${fallbackGuitar.imageName}.jpg`
+    let guitarHistory: string = fallbackGuitar.history
+    let guitarId: string = fallbackGuitar.id
     if (params.has('id')) {
       const idParam = params.get('id')
       if (idParam === null) {
-        // id var exists but no value, default to first available guitar
-        setImageUrl('img/missing-guitar.jpg')
-        setHistory('No guitar ID provided.')
-        return
+        // id var exists but no value, don't change away from fallback guitar
+        guitarImage = `${newUrlPrefix}img/missing-guitar.jpg`
+        guitarHistory = 'No guitar ID provided.'
+      } else if (isNaN(parseInt(idParam))) {
+        guitarImage = `${newUrlPrefix}img/missing-guitar.jpg`
+        guitarHistory = 'Invalid ID provided.'
       }
-      if (isNaN(parseInt(idParam))) {
-        setImageUrl('img/missing-guitar.jpg')
-        setHistory('Invalid ID provided.')
-        return
-      }
-      const guitar: GuitarData = data.find(g => g.id === idParam) || fallbackGuitar
-      setImageUrl(`img/${face}/${guitar.imageName}.jpg`)
-      setHistory(guitar.history)
-      setSelectedId(idParam)
-    }
 
+      const guitar = data.find(g => g.id === idParam) || fallbackGuitar
+      guitarImage = `${newUrlPrefix}img/${face}/${guitar.imageName}.jpg`
+      guitarHistory = guitar.history
+      guitarId = idParam || fallbackGuitar.id
+    }
+    
+    let newType: string = "All types"
     if (params.has('type')) {
-      const typeParam = params.get('type')
-      if (typeParam === null) setSelectedType("All types")
-      else setSelectedType(typeParam)
+      const typeParam:string|null = params.get('type')
+      if (typeParam === null) newType = "All types"
+      else newType = typeParam
     }
-  }, [data, fallbackGuitar])
 
+    // set all actual react hook managed items
+    setLocalhostPrefix(newUrlPrefix)
+    setRear(face === 'back')
+    setImageUrl(guitarImage)
+    setHistory(guitarHistory)
+    setSelectedId(guitarId)
+    setSelectedType(newType)
+  }, [data, fallbackGuitar])
+  
   return (
     <div className="main-panel">
       <ControlsContainer
@@ -80,7 +91,10 @@ export const MainPanel: React.FC = () => {
         selectedId={selectedId}
         selectedType={selectedType}
       />
-      <GuitarFrame imageUrl={imageUrl} />
+      <GuitarFrame
+        imageUrl={imageUrl}
+        localhostPrefix={localhostPrefix}
+      />
       <HistoryBlurb copy={history} />
     </div>
   )
