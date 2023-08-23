@@ -66,6 +66,12 @@ export const ControlsContainer: React.FC<ControlsContainerProps> = ({
       >
         {data
           .filter(d => selectedType === "All types" || selectedType === d.type)
+          .sort((a, b) => {
+            if (a.brand < b.brand) return -1;
+            if (a.brand > b.brand) return 1;
+            if (a.model < b.model) return -1;
+            return 1;
+          })
           .map(guitar => {
             const brand = `${guitar.brand} - `
             const model = guitar.model

@@ -1,5 +1,13 @@
+export type GuitarType =
+  "Electric" |
+  "Semi-hollow" |
+  "Acoustic" |
+  "Hollow-body" |
+  "Electric Bass" |
+  "Unknown type";
+
 export type RawGuitarData = {
-  type: string|null,
+  type: GuitarType|null,
   model: string|null,
   brand: string|null,
   year: string|null,
@@ -10,7 +18,7 @@ export type RawGuitarData = {
 
 export type GuitarData = {
   id: string,
-  type: string,
+  type: GuitarType,
   model: string,
   brand: string,
   year: string,

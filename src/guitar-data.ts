@@ -154,4 +154,22 @@ export const rawData: RawGuitarData[] = [
     imageBack: "grote",
     history: "This guitar came to me as one of a batch of twelve that I bought at auction, with the original intention of repairing, cleaning up, and flipping.  My partner discovered, through the unrelated trials and tribulations of a friend of hers, an online estate sale company, and while browsing their site, we stumbled upon a San Luis Obispo-based auction (we believe a defunct pawn shop) whose hundreds of lots included over 200 guitars.  I did a ton of research on the potential upside of each guitar depending on how high each example's auction price rose.  In the end, I came away with twelve guitars, representing a vast spectrum of quality and condition.\n\nThis Chinese-made Les Paul clone is my best-playing LP style guitar (which I'm very sad to say, because it means it's better than the red StewMac kit I built, but hey, gimme a break, it was my first).  Now normally, I wouldn't give a Chinese guitar the time of day, but hear me out.  It plays great, even as-is from the auction.  All it needed was a tune.  Even the strings are in great shape.  The paint is near-mint, a true rarity among pawn shop finds, and the blueberry burst finish over flame maple is kingly.  The electronics work flawlessly, and it is even - in ways I find difficult to describe - the best physically-balanced LP style guitar in my collection.  For all of these reasons, not to mention the fact that the final auction price for me was $57, I am considering (possibly) keeping this guitar in my collection long-term.  Part of my plan for this auction haul is to start by selling the guitars I least want to keep, and as the guitars filter their way out, decide which auction finds I want to keep.  To keep myself honest (and maintain a healthy living space) I've sanely decided to sell some of my pre-existing collection in order to make space for any guitar I keep from the auction.  And yet, this stunning Grote, to my own frank surprise, just may make the cut."
   },
+  {
+    type: "Electric Bass",
+    model: "Custom Acrylic Bass",
+    brand: "Galveston",
+    year: null,
+    imageFront: "galveston",
+    imageBack: "galveston",
+    history: "This guitar came to me as one of a batch of twelve that I bought at auction, with the original intention of repairing, cleaning up, and flipping.  My partner discovered, through the unrelated trials and tribulations of a friend of hers, an online estate sale company, and while browsing their site, we stumbled upon a San Luis Obispo-based auction (we believe a defunct pawn shop) whose hundreds of lots included over 200 guitars.  I did a ton of research on the potential upside of each guitar depending on how high each example's auction price rose.  In the end, I came away with twelve guitars, representing a vast spectrum of quality and condition.\n\nNeat-o-keen see-through acrylic bass."
+  },
+  {
+    type: "Electric",
+    model: "Fastback",
+    brand: "Silvertone",
+    year: null,
+    imageFront: "silvertone",
+    imageBack: "silvertone",
+    history: "This guitar came to me as one of a batch of twelve that I bought at auction, with the original intention of repairing, cleaning up, and flipping.  My partner discovered, through the unrelated trials and tribulations of a friend of hers, an online estate sale company, and while browsing their site, we stumbled upon a San Luis Obispo-based auction (we believe a defunct pawn shop) whose hundreds of lots included over 200 guitars.  I did a ton of research on the potential upside of each guitar depending on how high each example's auction price rose.  In the end, I came away with twelve guitars, representing a vast spectrum of quality and condition.\n\nNeat-o-keen Silvertone."
+  },
 ]
