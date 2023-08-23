@@ -19,5 +19,8 @@
 @media screen and (max-width: 500px) {
   .history-blurb {
     max-height: unset;
+    margin-bottom: 24px;
+    margin-left: -35px;
+    min-width: 300px;
   }
 }

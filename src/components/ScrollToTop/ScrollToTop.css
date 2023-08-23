@@ -1,0 +1,36 @@
+a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-decoration: none !important;
+}
+
+.scroll-to-top {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .content {
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 22px;
+    color: white;
+    display: flex;
+    font-size: 24px;
+    height: 36px;
+    justify-content: center;
+    padding-bottom: 4px;
+    width: 40px;
+  }
+
+  .scroll-to-top {
+    bottom: 12px;
+    display: flex;
+    position: fixed;
+    right: -96px;
+    transition: right 0.25s ease;
+  }
+
+  .visible {
+    right: 12px;
+  }
+}
