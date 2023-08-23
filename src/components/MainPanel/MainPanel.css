@@ -4,7 +4,7 @@
     "controls-container controls-container"
     "guitar-frame history-blurb";
   grid-template-columns: 489px 1fr;
-  grid-template-rows: 55px 595px;
+  grid-template-rows: 36px 595px;
   margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;

@@ -1,6 +1,6 @@
 .controls-container {
   grid-area: controls-container;
-  text-align: left;
+  text-align: center;
 }
 
 .select-hint {

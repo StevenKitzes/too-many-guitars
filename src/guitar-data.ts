@@ -21,7 +21,7 @@ export const rawData: RawGuitarData[] = [
   },
   {
     type: "Electric",
-    model: "Handmade",
+    model: "Partscaster",
     brand: "Durazo",
     year: "2021",
     imageFront: "durazo",

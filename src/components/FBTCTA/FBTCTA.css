@@ -1,0 +1,36 @@
+a {
+  text-decoration: none !important;
+}
+
+.button {
+  align-items: center;
+  background-color: #d3ab45;
+  border-radius: 8px;
+  color: black;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  width: 150px;
+}
+
+.button-area {
+  align-items: center;
+  display: flex;
+  grid-area: button-area;
+  justify-content: center;
+}
+
+.cta-area {
+  grid-area: cta-area;
+}
+
+.fbt-cta-container {
+  display: grid;
+  grid-template-areas: 
+    "cta-area button-area";
+  grid-template-columns: 400px 1fr;
+  margin: 10px auto 20px;
+  text-align: center;
+  vertical-align: middle;
+  width: 600px;
+}
