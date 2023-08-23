@@ -20,7 +20,8 @@
       "guitar-frame"
       "history-blurb";
     grid-template-columns: 260px;
-    grid-template-rows: 140px 595px 1fr;
+    grid-template-rows: 100px 357px min-content;
+    height: min-content;
     justify-content: center;
   }
 }

@@ -39,8 +39,10 @@
 @media screen and (max-width: 500px) {
   .controls-container {
     align-items: center;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+      "guitar-selector-area guitar-selector-area"
+      "rear-flag-area filter-selector-area";
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -49,8 +51,11 @@
   .filter-selector-container {
     display: flex;
     flex-direction: column;
+    grid-area: filter-selector-area;
+    margin-bottom: 8px;
   }
   .filter-selector-label {
+    margin-bottom: 4px;
     margin-left: inherit;
     margin-right: inherit;
   }
@@ -58,8 +63,11 @@
   .rear-flag-container {
     display: flex;
     flex-direction: column;
+    grid-area: rear-flag-area;
+    margin-bottom: 8px;
   }
   .rear-flag-label {
+    margin-bottom: 4px;
     margin-left: inherit;
     margin-right: inherit;
   }
@@ -67,8 +75,11 @@
   .guitar-selector-container {
     display: flex;
     flex-direction: column;
+    grid-area: guitar-selector-area;
+    margin-bottom: 8px;
   }
   .guitar-selector-label {
+    margin-bottom: 4px;
     margin-right: inherit;
   }
 
