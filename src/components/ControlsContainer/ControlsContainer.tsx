@@ -55,59 +55,73 @@ export const ControlsContainer: React.FC<ControlsContainerProps> = ({
 
   return (
     <div className="controls-container">
-      Guitars:&nbsp;
-      <select
-        name="guitars"
-        id="guitars"
-        onChange={() => {
-          buildUrlAndNavigate()
-        }}
-        value={selectedId}
-      >
-        {data
-          .filter(d => selectedType === "All types" || selectedType === d.type)
-          .sort((a, b) => {
-            if (a.brand < b.brand) return -1;
-            if (a.brand > b.brand) return 1;
-            if (a.model < b.model) return -1;
-            return 1;
-          })
-          .map(guitar => {
-            const brand = `${guitar.brand} - `
-            const model = guitar.model
-            const year = guitar.year === 'Unknown' ? ' (year unknown)' : ` (${guitar.year})`
+      <div className="guitar-selector-container">
+        <div className="guitar-selector-label">
+          Guitars:
+        </div>
+        <div className="guitar-selector-element">
+          <select
+            name="guitars"
+            id="guitars"
+            onChange={() => {
+              buildUrlAndNavigate()
+            }}
+            value={selectedId}
+          >
+            {data
+              .filter(d => selectedType === "All types" || selectedType === d.type)
+              .sort((a, b) => {
+                if (a.brand < b.brand) return -1;
+                if (a.brand > b.brand) return 1;
+                if (a.model < b.model) return -1;
+                return 1;
+              })
+              .map(guitar => {
+                const brand = `${guitar.brand} - `
+                const model = guitar.model
+                const year = guitar.year === 'Unknown' ? ' (year unknown)' : ` (${guitar.year})`
 
-            return (
-              <option value={guitar.id} key={guitar.id}>{`${brand}${model}${year}`}</option>
-            )
-          }
-        )}
-      </select>
-      &nbsp;
-      Rear view:
-      &nbsp;
-      <input
-        id="rear"
-        onChange={() => {
-          buildUrlAndNavigate()
-        }}
-        type="checkbox"
-        checked={rear}
-      />
-
-      &nbsp;
-      Filter by type:&nbsp;
-      <select
-        name="types"
-        id="types"
-        onChange={() => {
-          buildUrlAndNavigate()
-        }}
-        value={selectedType}
-      >
-        <option value={"All types"} key={"All types"}>All types</option>
-        {types.map(type => <option value={type} key={type}>{type}</option>)}
-      </select>
+                return (
+                  <option value={guitar.id} key={guitar.id}>{`${brand}${model}${year}`}</option>
+                )
+              }
+            )}
+          </select>
+        </div>
+      </div>
+      <div className="rear-flag-container">
+        <div className="rear-flag-label">
+          Rear view:
+        </div>
+        <div className="rear-flag-element">
+          <input
+            id="rear"
+            onChange={() => {
+              buildUrlAndNavigate()
+            }}
+            type="checkbox"
+            checked={rear}
+          />
+        </div>
+      </div>
+      <div className="filter-selector-container">
+        <div className="filter-selector-label">
+          Filter by type:
+        </div>
+        <div className="filter-selector-element">
+          <select
+            name="types"
+            id="types"
+            onChange={() => {
+              buildUrlAndNavigate()
+            }}
+            value={selectedType}
+          >
+            <option value={"All types"} key={"All types"}>All types</option>
+            {types.map(type => <option value={type} key={type}>{type}</option>)}
+          </select>
+        </div>
+      </div>
     </div>
   )
 }

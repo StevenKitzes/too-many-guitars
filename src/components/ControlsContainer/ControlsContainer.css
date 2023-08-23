@@ -1,8 +1,78 @@
 .controls-container {
+  display: flex;
+  flex-direction: row;
   grid-area: controls-container;
+  justify-content: center;
   text-align: center;
+}
+
+.filter-selector-container {
+  display: flex;
+  flex-direction: row;
+}
+.filter-selector-label {
+  margin-left: 36px;
+  margin-right: 12px;
+}
+
+.rear-flag-container {
+  display: flex;
+  flex-direction: row;
+}
+.rear-flag-label {
+  margin-left: 36px;
+  margin-right: 8px;
+}
+
+.guitar-selector-container {
+  display: flex;
+  flex-direction: row;
+}
+.guitar-selector-label {
+  margin-right: 12px;
 }
 
 .select-hint {
   color: darkgray;
+}
+
+@media screen and (max-width: 500px) {
+  .controls-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .filter-selector-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .filter-selector-label {
+    margin-left: inherit;
+    margin-right: inherit;
+  }
+  
+  .rear-flag-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .rear-flag-label {
+    margin-left: inherit;
+    margin-right: inherit;
+  }
+  
+  .guitar-selector-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .guitar-selector-label {
+    margin-right: inherit;
+  }
+
+  #guitars {
+    max-width: 260px;
+  }
 }

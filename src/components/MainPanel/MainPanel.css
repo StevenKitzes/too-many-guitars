@@ -4,10 +4,23 @@
     "controls-container controls-container"
     "guitar-frame history-blurb";
   grid-template-columns: 489px 1fr;
-  grid-template-rows: 36px 595px;
+  grid-template-rows: 48px 595px;
   margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
   height: 650px;
   width: 90vw;
+}
+
+@media screen and (max-width: 500px) {
+  .main-panel {
+    align-items: center;
+    grid-template-areas: 
+      "controls-container"
+      "guitar-frame"
+      "history-blurb";
+    grid-template-columns: 260px;
+    grid-template-rows: 140px 595px 1fr;
+    justify-content: center;
+  }
 }

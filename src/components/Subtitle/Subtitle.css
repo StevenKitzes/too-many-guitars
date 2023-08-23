@@ -2,5 +2,11 @@
   color: white;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 30px;
-  margin: 10px 5vw 20px;
+  margin: 10px 30px 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .subtitle {
+    font-size: 22px;
+  }
 }

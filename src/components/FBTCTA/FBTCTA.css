@@ -21,16 +21,68 @@ a {
 }
 
 .cta-area {
+  color: #ccc;
   grid-area: cta-area;
+}
+.cta-area-mobile {
+  display: none;
 }
 
 .fbt-cta-container {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "cta-area button-area";
   grid-template-columns: 400px 1fr;
   margin: 10px auto 20px;
   text-align: center;
   vertical-align: middle;
   width: 600px;
+}
+
+.separator {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .button-area {
+    align-items: center;
+    display: flex;
+    grid-area: button-area;
+    justify-content: center;
+    width: 260px;
+  }
+
+  .cta-area {
+    display: none;
+  }
+  .cta-area-mobile {
+    align-items: center;
+    color: #ccc;
+    display: flex;
+    grid-area: cta-area-mobile;
+    justify-content: center;
+    margin-bottom: 12px;
+    width: 260px;
+  }
+  
+  .fbt-cta-container {
+    display: grid;
+    grid-template-areas: 
+      "cta-area-mobile"
+      "button-area"
+      "separator";
+    grid-template-columns: inherit;
+    grid-template-rows: auto auto auto;
+    margin: 10px auto 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 260px;
+  }
+
+  .separator {
+    display: flex;
+    grid-area: separator;
+    margin-top: 16px;
+    width: 260px;
+  }
 }

@@ -41,3 +41,10 @@ body {
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: black;
+    background-image: none;
+  }
+}
