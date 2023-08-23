@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/too-many-guitars/static/css/main.00e59b4d.css",
-    "main.js": "/too-many-guitars/static/js/main.b7139427.js",
+    "main.css": "/too-many-guitars/static/css/main.604ef1af.css",
+    "main.js": "/too-many-guitars/static/js/main.f4d791b0.js",
     "static/js/787.8162dd60.chunk.js": "/too-many-guitars/static/js/787.8162dd60.chunk.js",
     "static/media/guitar-background.jpg": "/too-many-guitars/static/media/guitar-background.7d479925581cab25a5e3.jpg",
     "index.html": "/too-many-guitars/index.html",
-    "main.00e59b4d.css.map": "/too-many-guitars/static/css/main.00e59b4d.css.map",
-    "main.b7139427.js.map": "/too-many-guitars/static/js/main.b7139427.js.map",
+    "main.604ef1af.css.map": "/too-many-guitars/static/css/main.604ef1af.css.map",
+    "main.f4d791b0.js.map": "/too-many-guitars/static/js/main.f4d791b0.js.map",
     "787.8162dd60.chunk.js.map": "/too-many-guitars/static/js/787.8162dd60.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.00e59b4d.css",
-    "static/js/main.b7139427.js"
+    "static/css/main.604ef1af.css",
+    "static/js/main.f4d791b0.js"
   ]
 }
