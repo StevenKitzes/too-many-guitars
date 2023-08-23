@@ -75,7 +75,7 @@ export const ControlsContainer: React.FC<ControlsContainerProps> = ({
           .map(guitar => {
             const brand = `${guitar.brand} - `
             const model = guitar.model
-            const year = guitar.year === 'Unknown' ? ' - year unknown' : ` (${guitar.year})`
+            const year = guitar.year === 'Unknown' ? ' (year unknown)' : ` (${guitar.year})`
 
             return (
               <option value={guitar.id} key={guitar.id}>{`${brand}${model}${year}`}</option>
